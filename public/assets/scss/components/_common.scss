@@ -1,0 +1,168 @@
+
+/*----- section title style start -----*/
+.section-title {
+    padding-bottom: 42px;
+    .title {
+        color: $black-soft;
+        font-size: 30px;
+        line-height: 1.2;
+        padding-bottom: 12px;
+        margin-top: -8px;
+        text-transform: capitalize;
+        // responsive
+        @media #{$xs-device} {
+            font-size: 24px;
+            margin-top: -5px;
+        }
+    }
+    .sub-title {
+        font-size: 18px;
+        @media #{$xs-device} {
+            font-size: 16px;
+        }
+    }
+}
+/*----- section title style end -----*/
+
+/*------ brand area start ------*/
+.brand-item {
+    img {
+        margin: auto;
+        opacity: 0.3;
+    }
+    &:hover {
+        img {
+            opacity: 1;
+        }
+    }
+}
+/*------ brand area end ------*/
+
+// top seller
+.top-seller-carousel  {
+    .slick-slide {
+        div {
+            line-height: 1;
+        }
+    }
+}
+
+/* ----scroll to top start ----*/
+.scroll-top {
+    bottom: 50px;
+    cursor: pointer;
+    height: 40px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    width: 40px;
+    z-index: 9999;
+    transition: 0.4s;
+    border-radius: 4px;
+    background-color: $theme-color;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+
+    i {
+        line-height: 40px;
+        color: #fff;
+        font-size: 25px;
+    }
+
+    &.not-visible {
+        bottom: -50px;
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+/* ----scroll to top end ----*/
+
+/*-------- Custom Checkbox Style start --------*/
+.custom-checkbox,
+.custom-radio {
+
+    &.custom-control {
+        min-height: auto;
+    }
+
+    label,
+    .custom-control-label {
+        font-size: 14px;
+        line-height: 1;
+        padding-left: 10px;
+        font-weight: 400;
+        display: block;
+        cursor: pointer;
+
+        &:before {
+            background-color: transparent;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            height: 15px;
+            top: 0;
+            width: 15px;
+        }
+
+        &:after {
+            background-size: 10px 10px;
+            height: 15px;
+            top: 0;
+        }
+
+        a {
+            color: $black-soft;
+            font-weight: 500;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+
+    input,
+    .custom-control-input {
+        outline: none;
+
+        &:focus {
+
+            ~.custom-control-label,
+            label {
+                &:before {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        &:checked {
+
+            ~.custom-control-label,
+            label {
+                &:before {
+                    background-color: $theme-color;
+                    border-color: $theme-color;
+                }
+            }
+        }
+    }
+}
+/*-------- Custom Checkbox Style end --------*/
+
+/*------- Custom Radio Button Style start -------*/
+.custom-radio {
+    label,
+    .custom-control-label {
+        &:before {
+            border-radius: 50%;
+            height: 14px;
+            width: 14px;
+        }
+
+        &::after {
+            background-size: 10px 10px;
+            left: -22px;
+            top: 2px;
+            height: 10px;
+            width: 10px;
+        }
+    }
+}
+/*------- Custom Radio Button Style end -------*/

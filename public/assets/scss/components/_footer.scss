@@ -1,0 +1,83 @@
+
+/*--------- footer main style start ---------*/
+.footer-widget-area {
+    background-color: #f0f0f0;
+}
+.widget {
+    &-item {
+
+    }
+    &-title {
+        color: $black-soft;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1;
+        margin-top: -4px;
+        padding-bottom: 28px;
+        text-transform: capitalize;
+    }
+}
+
+.location-wrap,
+.useful-link {
+    li {
+        color: $black-soft;
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        a {
+            color: $black-soft;
+            &:hover {
+                color: $theme-color;
+                padding-left: 5px;
+            }
+        }
+        i {
+            font-size: 22px;
+            padding-right: 10px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// usefull link
+.useful-link {
+    li {
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+}
+/*--------- footer main style end ---------*/
+
+/*------- footer bottom start -------*/
+.footer-bottom {
+    background-color: #e4e4e4;
+    padding: 20px 0;
+}
+.copyright-text {
+    // responsive
+    @media #{$sm-device} {
+        padding-top: 10px;
+    }
+    p {
+        font-size: 14px;
+        a {
+            color: $theme-color;
+        }
+    }
+}
+
+// footer social link
+.footer-social-link {
+    a {
+        color: $paragraph;
+        font-size: 16px;
+        margin-left: 20px;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+}
+/*------- footer bottom end -------*/

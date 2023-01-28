@@ -1,0 +1,93 @@
+
+/*------ contact form area start -------*/
+.contact-title {
+    color: $black-soft;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 600;
+    margin-top: -4px;
+    text-transform: capitalize;
+    padding-bottom: 30px;
+    @media #{$xs-device} {
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+}
+.contact-message {
+    form {
+        input, textarea {
+            width: 100%;
+            border: none;
+            padding: 10px 10px;
+            border-bottom: 3px solid transparent;
+            background-color: #f3f6f5;
+            margin-bottom: 30px;
+        }
+        textarea  {
+            height: 150px;
+        }
+    }
+}
+/*------ contact form area start -------*/
+
+/*------ contact info area start -------*/
+.contact-info {
+    height: 100%;
+    // responsive
+    @media #{$md-device} {
+        margin-top: 80px;
+    }
+    @media #{$sm-device} {
+        margin-top: 62px;
+        margin-bottom: -7px;
+    }
+    p {
+        color: $paragraph;
+        padding-bottom: 30px;
+        @media #{$md-device} {
+            padding-bottom: 10px;
+        }
+    }
+    ul {
+        li {
+            border-bottom: 1px solid $bdr-color;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            &:last-child {
+                border-bottom: none;
+            }
+            i {
+                font-size: 18px;
+                padding-right: 10px;
+            }
+        }
+    }
+    .working-time {
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 5px;
+        }
+        p {
+            span {
+                color: $black-soft;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+/*------ contact info area end -------*/
+
+#map_content {
+    height: 500px;
+    @media #{$md-device} {
+        height: 400px;
+    }
+    @media #{$sm-device} {
+        height: 300px;
+    }
+    @media #{$xs-device} {
+        height: 200px;
+    }
+}
+

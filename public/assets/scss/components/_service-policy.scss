@@ -1,0 +1,30 @@
+/*------- service policy area start -------*/
+.service-policy-item {
+    display: flex;
+    padding: 30px;
+    // responsive
+    @media #{$md-device, $sm-device} {
+        display: block;
+        text-align: center;
+    }
+    .policy {
+        &-content {
+            padding-left: 20px;
+            @media #{$md-device, $sm-device} {
+                margin-top: 20px;
+                padding-left: 0;
+            }
+        }
+        &-title {
+            font-size: 18px;
+            line-height: 1;
+            font-weight: 500;
+            padding-bottom: 5px;
+        }
+        &-desc {
+            font-size: 16px;
+            color: $black-soft;
+        }
+    }
+}
+/*------- service policy area end -------*/

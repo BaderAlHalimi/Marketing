@@ -1,0 +1,59 @@
+/*----- breadcrumb style css start -----*/
+.breadcrumb-wrap {
+    padding: 55px 0 60px;
+    // responsive
+    @media #{$sm-device} {
+        padding: 28px 0 35px;
+    }
+    .breadcrumb-title {
+        font-size: 24px;
+        padding-bottom: 15px;
+        text-transform: uppercase;
+    }
+    nav {
+        h2 {
+            color: $black-soft;
+            font-size: 36px;
+            line-height: 1;
+            padding-bottom: 20px;
+            display: inline-block;
+            text-transform: capitalize;
+            font-family: $font-family-heading;
+            // responsive
+            @media #{$xs-device} {
+                font-size: 28px;
+            }
+        }
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            .breadcrumb-item {
+                font-size: 16px;
+                line-height: 1;
+                text-transform: capitalize;
+                // responsive
+                @media #{$xxs-device} {
+                    font-size: 14px;
+                }
+                a {
+                    color: $black-soft;
+                    &:hover {
+                        color: $theme-color; 
+                    }
+                }
+                &.active {
+                    color: $theme-color;
+                }
+                &:first-child {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- breadcrumb style css end -----*/

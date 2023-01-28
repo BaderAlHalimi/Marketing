@@ -1,0 +1,44 @@
+
+
+/*------- Buttons Style here -------*/
+.btn {
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: $theme-color;
+    outline: none;
+    box-shadow: none;
+    transition: 0.4s;
+    display: inline-block;
+    padding: 14px 25px;
+    background-color: $black-soft;
+    text-transform: uppercase;
+    &:focus {
+        box-shadow: none;
+    }
+    &:hover {
+        color: $white;
+        background-color: $theme-color;
+    }
+    &-hero {
+        color: $black-soft;
+        background-color: $white;
+        border-radius: 50px;
+        padding: 18px 44px;
+        &:hover {
+            color: $theme-color;
+            background-color: $black-soft;
+        }
+    }
+    &__bg {
+        color: $white;
+        font-size: 16px;
+        border-radius: 4px;
+        background-color: $black-soft;
+        &:hover {
+            border-color: $theme-color;
+            background-color: $theme-color;
+        }
+    }
+}
