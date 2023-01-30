@@ -23,11 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $item_id = $_GET['id'];
     if (isset($_SESSION['id'])) {
         $user_id = $_SESSION['id'];
-    } else {
+    } else{
         $gaccount_id = $_SESSION['google_account'];
     }
     $quantity = $_POST['quantity'];
-    if (!is_null($quantity) && $quantity > 0) {
+    $avilable = $_POST['avilable'];
+    if (!is_null($quantity) && $quantity > 0 && $quantity <= $avilable) {
         $date = date('Y-m-d h:i:s');
         $sql;
         if (isset($_SESSION['id'])) {
@@ -38,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         mysqli_query($con, $sql);
         $msg1 = 'Added to cart successfully!';
     } else {
-        $msg = 'Enter Quantity >0';
+        $msg = 'Enter Quantity loger than 0 and under avilable quantity';
     }
 }
 ?>
@@ -313,6 +314,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                                                                                                                             } else {
                                                                                                                                                                 echo 0;
                                                                                                                                                             } ?>" max="<?= $row['quantity'] ?>"></div>
+                                                    <input type="text" name="avilable" id="" value="<?= $row['quantity'] ?>" hidden>
                                                     <input class="btn btn-default" type="submit" style="float: right;" value="Add To Cart">
                                                 </form>
                                             </div>
@@ -369,7 +371,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             ?>
                                             <br><br><br>
                                             <h5>عربي:</h5>
-                                            <textarea disabled id="textBox2" name="content" TextMode="MultiLine" onkeyup="setHeight('textBox2');" onkeydown="setHeight('textBox2');" style="width: 100%;resize: none;background: none; border: none; overflow-y: hidden;"><?= $trans_result?></textarea>
+                                            <textarea disabled id="textBox2" name="content" TextMode="MultiLine" onkeyup="setHeight('textBox2');" onkeydown="setHeight('textBox2');" style="width: 100%;resize: none;background: none; border: none; overflow-y: hidden;"><?= $trans_result ?></textarea>
                                             <br><br>
                                             <!--JAVASCRIPT-->
                                             <script type="text/javascript">
