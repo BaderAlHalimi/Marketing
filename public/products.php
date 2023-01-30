@@ -42,6 +42,26 @@ include 'include/init.php';
         .hov-div-item p {
             transition: color 0.5s;
         }
+
+        #supercat:hover {
+            color: blue;
+        }
+
+        #supercat {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+        }
+
+        .subcat {
+            display: none;
+        }
+
+        .super:hover div {
+            display: block;
+        }
     </style>
 
 
@@ -247,31 +267,27 @@ include 'include/init.php';
                                 <h3>Categories</h3>
                                 <hr>
                                 <?php
-                                $category_id;
-                                if (isset($_GET['category'])) {
-                                    $category_id = $_GET['category'];
-                                }
-                                if (isset($_GET['sub_category'])) {
-                                    $sub_category = $_GET['sub_category'];
-                                }
                                 $sql = "SELECT * from categories where super_id is null";
                                 $result = mysqli_query($con, $sql);
                                 if (mysqli_num_rows($result)) {
                                     while ($rows = mysqli_fetch_assoc($result)) {
+                                        $category_id = $rows['id'];
                                 ?>
-                                        <a href="?category=<?= $rows['id'] ?>"><?= $rows['name'] ?></a><br>
-                                        <?php if (isset($category_id) && $category_id == $rows['id']) {
-                                            $sql1 = "SELECT * from categories where super_id = $category_id";
-                                            $result1 = mysqli_query($con, $sql1);
-                                            if (mysqli_num_rows($result1)) {
-                                                while ($rows1 = mysqli_fetch_assoc($result1)) {
-                                        ?>
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;>><a id="sub" href="?sub_category=<?= $rows1['id'] ?>"><?= $rows1['name'] ?></a><br>
-                                        <?php
+                                        <div class="super">
+                                            <a href="?category=<?= $rows['id'] ?>" id="supercat"><?= $rows['name'] ?><br></a>
+                                            <div class="subcat">
+                                                <?php $sql1 = "SELECT * from categories where super_id = $category_id";
+                                                $result1 = mysqli_query($con, $sql1);
+                                                if (mysqli_num_rows($result1)) {
+                                                    while ($rows1 = mysqli_fetch_assoc($result1)) {
+                                                ?>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;>><a id="sub" href="?sub_category=<?= $rows1['id'] ?>"><?= $rows1['name'] ?></a><br>
+                                                <?php
+                                                    }
                                                 }
-                                            }
-                                        } ?>
-
+                                                ?>
+                                            </div>
+                                        </div>
                                 <?php
                                     }
                                 }
@@ -314,7 +330,8 @@ include 'include/init.php';
                                     }
                                 }
                             } else {
-                                if (isset($sub_category)) {
+                                if (isset($_GET['sub_category'])) {
+                                    $sub_category = $_GET['sub_category'];
                                     $sql = "SELECT * from items where category_id = $sub_category order by num_of_sales desc";
                                     $result = mysqli_query($con, $sql);
                                     if (mysqli_num_rows($result)) {
@@ -342,7 +359,6 @@ include 'include/init.php';
                                                     <div class="card-footer" style="border: none; margin:0;padding: 0; background-color: white; color: white;">.</div>
                                                 </a>
                                             </div>
-
                                         <?php
                                         }
                                     }

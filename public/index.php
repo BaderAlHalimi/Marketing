@@ -104,7 +104,7 @@ $result = mysqli_query($con, $sql);
                         <!-- start logo area -->
                         <div class="col-lg-2">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="index.php">
                                     <img src="assets/img/logo/logo.png" alt="">
                                 </a>
                             </div>
@@ -206,7 +206,7 @@ $result = mysqli_query($con, $sql);
                     <div class="col-12">
                         <div class="mobile-main-header">
                             <div class="mobile-logo">
-                                <a href="index.html">
+                                <a href="index.php">
                                     <img src="assets/img/logo/logo.png" alt="Brand Logo">
                                 </a>
                             </div>
@@ -255,10 +255,10 @@ $result = mysqli_query($con, $sql);
                     <!-- mobile menu navigation start -->
                     <nav>
                         <ul class="mobile-menu">
-                            <li class="menu-item-has-children"><a href="index.html">Home</a>
+                            <li class="menu-item-has-children"><a href="index.php">Home</a>
                                 <ul class="dropdown">
-                                    <li><a href="index.html">Home version 01</a></li>
-                                    <li><a href="index-2.html">Home version 02</a></li>
+                                    <li><a href="index.php">Home version 01</a></li>
+                                    <li><a href="index-2.php">Home version 02</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><a href="#">pages</a>
